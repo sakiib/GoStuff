@@ -32,4 +32,20 @@ func main() {
 		fmt.Print(value, " ")
 	}
 	fmt.Println()
+
+	// assigning values while declaring the array, filled from index 0, rests are filled with default value, which is also zero
+	tempAra := [10]int{98, 93, 77, 82, 83}
+	fmt.Println(tempAra)
+	// we can also break them down in separate lines, in that case an ending comma is a must
+	words := [5]string{
+		"gone",
+		"with",
+		"the",
+		"wind",
+		"again",
+	}
+	fmt.Println(words)
+	// we can declare an array regarding of it's size by using three dots like the code below
+	numbers := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	fmt.Println(numbers, " & lenghth is ", len(numbers))
 }
