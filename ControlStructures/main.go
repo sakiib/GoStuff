@@ -31,4 +31,15 @@ func main() {
 			fmt.Println(i, " is not divisible by 2 or 3")
 		}
 	}
+
+	// switch case:
+	for i := 1; i <= 10; i++ {
+		reminder := i % 2
+		switch reminder {
+		case 0:
+			fmt.Println("Even")
+		case 1:
+			fmt.Println("Odd")
+		}
+	}
 }
