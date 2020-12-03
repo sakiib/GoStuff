@@ -4,6 +4,24 @@ import (
 	"fmt"
 )
 
+// variables can also be declared at package level & instead of declaring var everytime like this..
+// var firstName string = "sakib"
+// var lastName string = "alamin"
+// var company string = "appscode"
+// var id int = 12345
+
+// .. we can enclose them in parenthesis like this.
+// & ofcourse follow better naming convention, don't just put x, y etc as variable name
+// use meaningful & considerable lenghth considering lifecycle of that particular variables
+var (
+	firstName string = "sakib"
+	lastName  string = "alamin"
+	company   string = "appscode"
+	id        int    = 12345
+)
+
+// if we want to export something, then it has to follow a certain naming convention, must start with a Capital letter
+
 func main() {
 	fmt.Println("Types & Variables")
 
@@ -32,4 +50,26 @@ func main() {
 	// Print without & with a new line, takes one or more comma separated arguments
 	fmt.Print(i, j, k)
 	fmt.Println(i, j, k)
+
+	fmt.Println(firstName, lastName, company, id)
+
+	// Main Data types -> notice that, there's no char data type in golang :(
+
+	// string
+	// bool
+	// int
+	// int  int8  int16  int32  int64
+	// uint uint8 uint16 uint32 uint64 uintptr
+	// byte - alias for uint8
+	// rune - alias for int32
+	// float32 float64
+	// complex64 complex128
+
+	var isPrime bool = false
+	fmt.Printf("%v, %T\n", isPrime, isPrime)
+
+	const number int = 10
+	// can't redefine the value as number is a constant like this, number += 10, come on, constant is constant!!
+
+	fmt.Println(number + 10)
 }
