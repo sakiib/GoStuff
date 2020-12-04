@@ -114,6 +114,18 @@ func main() {
 		fmt.Println(graph[i])
 	}
 
+	// appending at the end of a slice, we can simply append a single value, but to insert a slide we need to use the (...) spread operator/syntax
+	var testSlice []int
+	testSlice = append(testSlice, 10)
+	testSlice = append(testSlice, 20)
+	fmt.Println("testSlice: ", testSlice)
+	var addSlice []int
+	addSlice = append(addSlice, 30)
+	addSlice = append(addSlice, 40)
+	fmt.Println("addSlice", addSlice)
+	testSlice = append(testSlice, addSlice...) // see the three dot's (spread operator/syntax)
+	fmt.Println("updated testSlice", testSlice)
+	fmt.Println("see if the addSlice has changed: ", addSlice) // no, it hasn't
 	// declaration of a map [key, value]: [string, int] using the make function
 	mp := make(map[string]int)
 	mp["sakib"] = 1
