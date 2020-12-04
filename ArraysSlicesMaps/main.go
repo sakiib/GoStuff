@@ -56,4 +56,22 @@ func main() {
 	// although we've changed the content on carray, the value on aarray remains the same as before
 	fmt.Println(aarray) // prints: [1, 2, 3]
 	fmt.Println(carray) // prints: [1, 10, 3]
+
+	// for slices the size need not to be defined, it's more like C++ container vector <> in terms of usage but only better
+	// unlike array, slices actually points to the array a, from which b is assigned, so both go changed, like pointers do
+	aslices := []int{1, 2, 3}
+	bslices := aslices
+	bslices[1] = 10
+	fmt.Println(aslices) // 1, 10, 3
+	fmt.Println(bslices) // 1, 10, 3
+
+	// if you want to create a slice you should use the builtin function "make" like this:
+	mySlice := make([]int, 10)
+	fmt.Println(mySlice)
+	// This creates a slice that is associated with an underlying float64 array of length 5.
+	// Slices are always associated with some array, and although they can never be longer than the array, they can be smaller.
+	// The make function also allows a 3rd parameter, like this:
+	newSlice := make([]int, 10, 20)
+	// Here, 20 represents the capacity of the underlying array which the slice points to:
+	fmt.Println(newSlice)
 }
