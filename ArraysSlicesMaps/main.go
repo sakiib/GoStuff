@@ -57,6 +57,19 @@ func main() {
 	fmt.Println(aarray) // prints: [1, 2, 3]
 	fmt.Println(carray) // prints: [1, 10, 3]
 
+	// 2-D array declaration, basically created r by c empty arrays, now initiating 0 to r - 1 cells to assign new values
+	var matrix [3][3]int
+	matrix[0] = [3]int{1, 0, 0}
+	matrix[1] = [3]int{0, 1, 0}
+	matrix[2] = [3]int{0, 0, 1}
+	fmt.Println(matrix)
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 3; j++ {
+			fmt.Print(matrix[i][j], " ")
+		}
+		fmt.Println()
+	}
+
 	// for slices the size need not to be defined, it's more like C++ container vector <> in terms of usage but only better
 	// unlike array, slices actually points to the array a, from which b is assigned, so both go changed, like pointers do
 	aslices := []int{1, 2, 3}
