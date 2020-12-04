@@ -87,4 +87,10 @@ func main() {
 	newSlice := make([]int, 10, 20)
 	// Here, 20 represents the capacity of the underlying array which the slice points to:
 	fmt.Println(newSlice)
+	// Clearing a slice
+	a := []string{"A", "B", "C", "D", "E"}
+	a = nil
+	fmt.Println(a, len(a), cap(a)) // [] 0 0
+	// In practice, nil slices and empty slices can often be treated in the same way: they have zero length and capacity,
+	// they can be used with the same effect in for loops and append functions, and they even look the same when printed.
 }
