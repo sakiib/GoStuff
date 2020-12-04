@@ -93,4 +93,18 @@ func main() {
 	fmt.Println(a, len(a), cap(a)) // [] 0 0
 	// In practice, nil slices and empty slices can often be treated in the same way: they have zero length and capacity,
 	// they can be used with the same effect in for loops and append functions, and they even look the same when printed.
+
+	// length & capacity -> they aren't same
+	fmt.Println(len(a), cap(a))
+
+	aa := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	bb := a[:]   // slice of all elements
+	cc := a[3:]  // slice from 4th element to end
+	dd := a[:6]  // slice first 6 elements, so basically [left, right), left is inclusive & right is exclusive
+	ee := a[3:6] // slice the 4th, 5th, and 6th elements, aa, bb, cc, dd, ee all point to same underlying data
+	fmt.Println(aa)
+	fmt.Println(bb)
+	fmt.Println(cc)
+	fmt.Println(dd)
+	fmt.Println(ee)
 }
