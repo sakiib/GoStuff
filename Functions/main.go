@@ -76,6 +76,11 @@ func recFunc(n int) int {
 	return n * recFunc(n-1)
 }
 
+// Higher order function, see the def. in the main function
+func simple(a func(a, b int) int) {
+	fmt.Println(a(60, 7))
+}
+
 func main() {
 	fmt.Println("Functions!")
 	fmt.Println(sumOfTwoNumbers(10, 20))
@@ -119,4 +124,11 @@ func main() {
 	b := 200
 	a, b = b, a
 	fmt.Println(a, b)
+
+	// Higher order functions: The definition of Higher-order function:
+	// a function which does at least one of the following: i. takes one or more functions as arguments ii. returns a function as its result
+	f := func(a, b int) int {
+		return a + b
+	}
+	simple(f)
 }
