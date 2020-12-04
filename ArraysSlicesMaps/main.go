@@ -72,6 +72,7 @@ func main() {
 
 	// for slices the size need not to be defined, it's more like C++ container vector <> in terms of usage but only better
 	// unlike array, slices actually points to the array a, from which b is assigned, so both go changed, like pointers do
+	var mSlice []int // array like dedlaration, just without assigning the size of the array -> makes it a slice
 	aslices := []int{1, 2, 3}
 	bslices := aslices
 	bslices[1] = 10
