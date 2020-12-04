@@ -48,4 +48,12 @@ func main() {
 	// we can declare an array regarding of it's size by using three dots like the code below
 	numbers := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	fmt.Println(numbers, " & lenghth is ", len(numbers))
+
+	// copying an array is just like assigning a value to a variable, doesn't point to the originl array while assigning, it just copies it!
+	aarray := [...]int{1, 2, 3}
+	carray := aarray
+	carray[1] = 10
+	// although we've changed the content on carray, the value on aarray remains the same as before
+	fmt.Println(aarray) // prints: [1, 2, 3]
+	fmt.Println(carray) // prints: [1, 10, 3]
 }
