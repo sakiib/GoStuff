@@ -1,20 +1,20 @@
 # GoStuff
 ### Learning the very basics of Go programming language (Golang) 
 
-### Installation
+**<i> Installation </i>**
 * [sysdevbd step by step guide](https://sysdevbd.com/go/)
 
-### Book
+**<i> Book </i>**
 * [An Introduction to Programming in Go](https://www.golang-book.com/books/intro)
 
-### Write Go Online
+**<i> Write Go Online </i>**
 * [Go Playground](https://play.golang.org/)
 
-### Video Tut
+**<i> Video Tut </i>**
 * [Traversy Media](https://www.youtube.com/watch?v=SqrbIlUwR0U)
 * [freeCodeCamp.org](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 
-### Additional Resources/Blog links
+**<i> Additional Resources/Blog links </i>**
 * [A Tour of Go](https://tour.golang.org/welcome/1)
 * [GolangBot](https://golangbot.com/)
 * [GoByExample](https://gobyexample.com/)
