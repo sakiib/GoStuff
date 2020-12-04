@@ -107,4 +107,16 @@ func main() {
 		return x
 	}
 	fmt.Println(increment(), increment())
+
+	swap := func(x, y int) (int, int) {
+		return y, x
+	}
+	// swap two integers
+	x, y := swap(10, 20)
+	fmt.Println(x, y)
+	// or we can just do this! cute! :p
+	a := 100
+	b := 200
+	a, b = b, a
+	fmt.Println(a, b)
 }
