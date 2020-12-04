@@ -65,6 +65,17 @@ func max(x int, args ...int) int {
 	return mx
 }
 
+// a simple recursive function to calculate the factorial of a number
+func recFunc(n int) int {
+	if n < 0 {
+		panic("negative number in factorial function")
+	}
+	if n <= 1 {
+		return 1
+	}
+	return n * recFunc(n-1)
+}
+
 func main() {
 	fmt.Println("Functions!")
 	fmt.Println(sumOfTwoNumbers(10, 20))
@@ -77,4 +88,5 @@ func main() {
 	fmt.Println(val1, val2)
 	fmt.Println(sumUsingVariadicFunc(1, 2, 3, 4, 5, 6, 7))
 	fmt.Println(min(5, 4, 2, 1, 3), max(1, 4, 5, 2, 3))
+	fmt.Println(recFunc(5), recFunc(0))
 }
