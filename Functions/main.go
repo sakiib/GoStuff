@@ -81,12 +81,30 @@ func main() {
 	fmt.Println(sumOfTwoNumbers(10, 20))
 	slice1 := []int{1, 2, 3, 4}
 	fmt.Println(sumOfAList(slice1))
+
 	// functions are built-up in a stack like fashion
 	fmt.Println(func1())
+
 	// a function can return multiple values, types must given in similar fashion
 	val1, val2 := multiValRetFunc()
 	fmt.Println(val1, val2)
+
 	fmt.Println(sumUsingVariadicFunc(1, 2, 3, 4, 5, 6, 7))
 	fmt.Println(min(5, 4, 2, 1, 3), max(1, 4, 5, 2, 3))
+
 	fmt.Println(recFunc(5), recFunc(0))
+
+	// Closure -> it is possible to create functions insides of functions, like this:
+	// here, add is a local variable that has the type func(int, int) int (a function that takes two ints and returns an int).
+	addTwo := func(x, y int) int {
+		return x + y
+	}
+	fmt.Println(addTwo(10, 20))
+	// When you create a local function like this it also has access to other local variables, should print 1, 2
+	x := 0
+	increment := func() int {
+		x++
+		return x
+	}
+	fmt.Println(increment(), increment())
 }
