@@ -83,7 +83,9 @@ func simple(a func(a, b int) int) {
 
 func intSeq() func() int {
 	i := 0
+	fmt.Println("intseq out, comes here only while definig the closure!")
 	return func() int {
+		fmt.Println("intseq in, comes here every time this func is called!")
 		i++
 		return i
 	}
@@ -144,7 +146,7 @@ func main() {
 	fmt.Println(a, b)
 
 	// added another closure example from go by exmple:
-	nextInt := intSeq()
+	nextInt := intSeq()    //  so, nextInt is not an integer, it's actually storing a function, that has access to the local scoped vars
 	fmt.Println(nextInt()) // 1
 	fmt.Println(nextInt()) // 2
 	fmt.Println(nextInt()) // 3
