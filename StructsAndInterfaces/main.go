@@ -50,4 +50,14 @@ func main() {
 	}
 
 	fmt.Println(studentsArray)
+
+	// other ways of declaration
+	var st Student
+	fmt.Println(st.FirstName, st.LastName, st.Courses, st.CG, st.Credits)
+
+	// using thie new()
+	// This allocates memory for all the fields, sets each of them to their zero value and returns a pointer.
+	// (*Student) More often we want to give each of the fields a value. We can do this in two ways. Like this: stdnt := Student{fieldName: initialValue}
+	stdnt := new(Student)
+	fmt.Println(stdnt.FirstName, stdnt.LastName, stdnt.Courses, stdnt.CG, stdnt.Credits)
 }
