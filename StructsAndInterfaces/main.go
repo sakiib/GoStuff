@@ -85,4 +85,8 @@ func main() {
 		Book{ID: "234", Title: "book-2", Isbn: "56789", Author: &Author{ID: "34", FirstName: "rabindranath", LastName: "tagore"}},
 	}
 	fmt.Println(booksArray)
+
+	for index, book := range booksArray {
+		fmt.Println(index, book.ID, book.Title, book.Isbn, book.Author.ID, book.Author.FirstName, book.Author.LastName)
+	}
 }
