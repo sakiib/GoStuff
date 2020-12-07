@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func f(n int) {
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 5; i++ {
 		fmt.Println(n, ":", i)
+		time.Sleep(time.Millisecond * 3000)
 	}
 }
 
@@ -21,5 +23,5 @@ func main() {
 	f(0)
 	var input string
 	fmt.Scanln(&input)
-	fmt.Println(input)
+	fmt.Println("input val: ", input)
 }
