@@ -29,6 +29,20 @@ type Author struct {
 	LastName  string
 }
 
+// Rectangle struct
+type Rectangle struct {
+	length int
+	width  int
+}
+
+func areaWithoutMethod(r *Rectangle) int {
+	return r.length * r.width
+}
+
+func (r *Rectangle) areaWithMethod() int {
+	return r.length * r.width
+}
+
 func main() {
 	fmt.Println("structs and interfaces!")
 
@@ -89,4 +103,15 @@ func main() {
 	for index, book := range booksArray {
 		fmt.Println(index, book.ID, book.Title, book.Isbn, book.Author.ID, book.Author.FirstName, book.Author.LastName)
 	}
+
+	// Methods..
+	rectangle1 := Rectangle{length: 2, width: 3}
+	fmt.Printf("%+v\n", rectangle1)
+	fmt.Println("using ref.: ", areaWithoutMethod(&rectangle1))
+	// the better alternative of doing this is by using Method like this.
+	// In between the keyword func and the name of the function we've added a “receiver”. The receiver is like a parameter – it
+	// has a name and a type – but by creating the function in this way it allows us to call the function using the dot (.) operator:
+	fmt.Println("using method: ", rectangle1.areaWithMethod())
+	// This is much easier to read, we no longer need the & operator (Go automatically knows to pass a pointer to the circle for this method)
+	// and because this function can only be used with Circles we can rename the function to just area
 }
