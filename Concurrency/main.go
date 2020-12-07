@@ -20,7 +20,7 @@ func main() {
 	// on a single-core machine. Parallelism is when tasks literally run at the same time, e.g., on a multicore processor.
 
 	// Goroutines
-	f(0)
+	go f(0)
 	var input string
 	fmt.Scanln(&input)
 	fmt.Println("input val: ", input)
