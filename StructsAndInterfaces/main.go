@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 // Student struct
@@ -64,6 +65,33 @@ func areaWithoutMethod(r *Rectangle) int {
 
 func (r *Rectangle) areaWithMethod() int {
 	return r.length * r.width
+}
+
+type geometry interface {
+	area() float64
+	perimeter() float64
+}
+
+type circle struct {
+	radius float64
+}
+
+type square struct {
+	side float64
+}
+
+func (c *circle) area() float64 {
+	return c.radius * c.radius * math.Pi
+}
+func (c *circle) perimeter() float64 {
+	return 2 * math.Pi * c.radius
+}
+
+func (s *square) area() float64 {
+	return s.side * s.side
+}
+func (s *square) perimeter() float64 {
+	return 4 * s.side
 }
 
 func main() {
@@ -142,4 +170,11 @@ func main() {
 	a := Android{Model: "1000", Person: Person{Name: "sakib"}}
 	a.talk()
 	a.Person.talk()
+
+	// Intefaces : Interfaces are named collections of method signatures.
+	c := circle{radius: 5}
+	fmt.Println(c.area(), c.perimeter())
+
+	s := square{side: 5}
+	fmt.Println(s.area(), s.perimeter())
 }
