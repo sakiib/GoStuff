@@ -89,6 +89,16 @@ func intSeq() func() int {
 	}
 }
 
+func sayHello(msg string) {
+	fmt.Println(msg)
+}
+
+func returnAnonymFunc() func(msg string) {
+	return func(msg string) {
+		fmt.Println("hello from return anonym func.")
+	}
+}
+
 func main() {
 	fmt.Println("Functions!")
 	fmt.Println(sumOfTwoNumbers(10, 20))
@@ -133,6 +143,7 @@ func main() {
 	a, b = b, a
 	fmt.Println(a, b)
 
+	// added another closure example from go by exmple:
 	nextInt := intSeq()
 	fmt.Println(nextInt()) // 1
 	fmt.Println(nextInt()) // 2
@@ -146,4 +157,15 @@ func main() {
 		return a + b
 	}
 	simple(f)
+
+	// anonymous function
+	// this is just a normal function
+	sayHello("Hello")
+	// an anonymous function
+	func(msg string) {
+		fmt.Println("Hello from anonym. func")
+	}("hello")
+	// it returns an anonymous function
+	anonymFunc := returnAnonymFunc()
+	anonymFunc("hello")
 }
