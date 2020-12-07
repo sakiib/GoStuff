@@ -14,6 +14,21 @@ type Student struct {
 	Courses   []string
 }
 
+// Book struct
+type Book struct {
+	ID     string
+	Title  string
+	Isbn   string
+	Author *Author
+}
+
+// Author struct
+type Author struct {
+	ID        string
+	FirstName string
+	LastName  string
+}
+
 func main() {
 	fmt.Println("structs and interfaces!")
 
@@ -60,4 +75,14 @@ func main() {
 	// (*Student) More often we want to give each of the fields a value. We can do this in two ways. Like this: stdnt := Student{fieldName: initialValue}
 	stdnt := new(Student)
 	fmt.Println(stdnt.FirstName, stdnt.LastName, stdnt.Courses, stdnt.CG, stdnt.Credits)
+
+	// Book - data, author refernce to another struct Author
+	book1 := Book{ID: "1", Title: "book-1", Isbn: "1354", Author: &Author{ID: "12", FirstName: "kazi", LastName: "Nazrul"}}
+	fmt.Println(book1.ID, book1.Title, book1.Isbn, book1.Author.FirstName, book1.Author.LastName, book1.Author.ID)
+
+	booksArray := []Book{
+		Book{ID: "123", Title: "book-1", Isbn: "12345", Author: &Author{ID: "12", FirstName: "kazi", LastName: "Nazrul"}},
+		Book{ID: "234", Title: "book-2", Isbn: "56789", Author: &Author{ID: "34", FirstName: "rabindranath", LastName: "tagore"}},
+	}
+	fmt.Println(booksArray)
 }
