@@ -81,6 +81,14 @@ func simple(a func(a, b int) int) {
 	fmt.Println(a(60, 7))
 }
 
+func intSeq() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
+	}
+}
+
 func main() {
 	fmt.Println("Functions!")
 	fmt.Println(sumOfTwoNumbers(10, 20))
@@ -124,6 +132,13 @@ func main() {
 	b := 200
 	a, b = b, a
 	fmt.Println(a, b)
+
+	nextInt := intSeq()
+	fmt.Println(nextInt()) // 1
+	fmt.Println(nextInt()) // 2
+	fmt.Println(nextInt()) // 3
+	newInts := intSeq()    // redifining i = 0
+	fmt.Println(newInts()) // 1
 
 	// Higher order functions: The definition of Higher-order function:
 	// a function which does at least one of the following: i. takes one or more functions as arguments ii. returns a function as its result
