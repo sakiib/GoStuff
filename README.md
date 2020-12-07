@@ -18,3 +18,4 @@
 * [A Tour of Go](https://tour.golang.org/welcome/1)
 * [GolangBot](https://golangbot.com/)
 * [GoByExample](https://gobyexample.com/)
+* [Closure Usage - calhoun](https://www.calhoun.io/5-useful-ways-to-use-closures-in-go/)
