@@ -35,6 +35,29 @@ type Rectangle struct {
 	width  int
 }
 
+// Person struct
+type Person struct {
+	Name string
+}
+
+// This would work, but we would rather say an Android is a Person, rather than an Android has a Person.
+// Go supports relationships like this by using an embedded type. Also known as anonymous fields, embedded types look like this
+
+// type Android struct {
+// 	Person Person
+// 	Model  string
+// }
+
+// Android struct
+type Android struct {
+	Person
+	Model string
+}
+
+func (p *Person) talk() {
+	fmt.Println("Hi, my name is", p.Name)
+}
+
 func areaWithoutMethod(r *Rectangle) int {
 	return r.length * r.width
 }
@@ -114,4 +137,9 @@ func main() {
 	fmt.Println("using method: ", rectangle1.areaWithMethod())
 	// This is much easier to read, we no longer need the & operator (Go automatically knows to pass a pointer to the circle for this method)
 	// and because this function can only be used with Circles we can rename the function to just area
+
+	// Embedded Types, description is on the top of structs
+	a := Android{Model: "1000", Person: Person{Name: "sakib"}}
+	a.talk()
+	a.Person.talk()
 }
