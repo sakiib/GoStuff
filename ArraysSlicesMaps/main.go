@@ -72,7 +72,8 @@ func main() {
 
 	// for slices the size need not to be defined, it's more like C++ container vector <> in terms of usage but only better
 	// unlike array, slices actually points to the array a, from which b is assigned, so both go changed, like pointers do
-	var mSlice []int // array like dedlaration, just without assigning the size of the array -> makes it a slice
+	var mSlice []int // array like declaration, just without assigning the size of the array -> makes it a slice
+	fmt.Println(mSlice)
 	aslices := []int{1, 2, 3}
 	bslices := aslices
 	bslices[1] = 10
@@ -138,6 +139,8 @@ func main() {
 	}
 	fmt.Println(mp["non_existant_key"]) // so, non existent key gives zero, so how do we check if it's actually there or not!!!
 
+	// var myMap = make(map[int]int) // declaring map in package level
+	
 	// so, to ensure that the key exists in our map, ok must be equal to true
 	val, ok := mp["someone"]
 	if ok {
