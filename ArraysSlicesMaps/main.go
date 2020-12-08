@@ -140,7 +140,7 @@ func main() {
 	fmt.Println(mp["non_existant_key"]) // so, non existent key gives zero, so how do we check if it's actually there or not!!!
 
 	// var myMap = make(map[int]int) // declaring map in package level
-	
+
 	// so, to ensure that the key exists in our map, ok must be equal to true
 	val, ok := mp["someone"]
 	if ok {
