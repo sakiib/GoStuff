@@ -46,21 +46,27 @@ func sumUsingVariadicFunc(args ...int) int {
 // no built-int function for calculating minimum, variadic function can be used here to implement one
 // it takes two or more arguments & calculates the minimum value among them, max can be implemented similarly
 
-func min(x int, args ...int) int {
-	mn := x
-	for _, value := range args {
-		if value < mn {
-			mn = value
+func min(a int, b int, args ...int) int {
+	mn := a
+	if b < mn {
+		mn = b
+	}
+	for _, val := range args {
+		if val < mn {
+			mn = val
 		}
 	}
 	return mn
 }
 
-func max(x int, args ...int) int {
-	mx := x
-	for _, value := range args {
-		if value > mx {
-			mx = value
+func max(a int, b int, args ...int) int {
+	mx := a
+	if b > mx {
+		mx = b
+	}
+	for _, val := range args {
+		if val > mx {
+			mx = val
 		}
 	}
 	return mx
