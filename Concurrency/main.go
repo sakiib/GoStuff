@@ -35,9 +35,9 @@ func main() {
 
 	// Goroutines
 	go f(0)
-	//var input string
-	//fmt.Scanln(&input)
-	//fmt.Println("input val: ", input)
+	var input1 string
+	fmt.Scanln(&input1)
+	fmt.Println("input val: ", input1)
 
 	// Channels: Channels provide a way for two goroutines to communicate with one another and synchronize their execution.
 	var c chan string = make(chan string)
@@ -45,6 +45,6 @@ func main() {
 	go pinger(c)
 	go printer(c)
 
-	var input string
-	fmt.Scanln(&input)
+	var input2 string
+	fmt.Scanln(&input2)
 }
