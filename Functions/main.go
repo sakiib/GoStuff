@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 // basic struct: func functionName(argument argument type, ) return type {}
@@ -101,6 +102,13 @@ func returnAnonymFunc() func(msg string) {
 	}
 }
 
+func first() {
+	fmt.Println("1st")
+}
+func second() {
+	fmt.Println("2nd")
+}
+
 func main() {
 	fmt.Println("Functions!")
 	fmt.Println(sumOfTwoNumbers(10, 20))
@@ -170,4 +178,20 @@ func main() {
 	// it returns an anonymous function
 	anonymFunc := returnAnonymFunc()
 	anonymFunc("hello")
+
+	// Defer : defer schedules a function call to be run after the function completes. Consider the following example:
+	defer second()
+	first()
+	// This program prints 1st followed by 2nd. Basically defer moves the call to second to the end of the function:
+
+	// defer is often used when resources need to be freed in some way. For example when we open a file we need to make sure to close it later. With defer:
+	myFile, err := os.Open("myFile.txt")
+	defer myFile.Close()
+	if err != nil {
+		panic(err) //  the panic function basically causes a run time error
+	}
+	// This has 3 advantages:
+	// (1) it keeps our Close call near our Open call so it's easier to understand,
+	// (2) if our function had multiple return statements (perhaps one in an if and one in an else) Close will happen before both of them and
+	// (3) deferred functions are run even if a run-time panic occurs.
 }
