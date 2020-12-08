@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 // variables can also be declared at package level & instead of declaring var everytime like this..
@@ -72,4 +73,21 @@ func main() {
 	// can't redefine the value as number is a constant like this, number += 10, come on, constant is constant!!
 
 	fmt.Println(number + 10)
+
+	// string to int converting, make sure that you import "strconv"
+	s := "123"
+	fmt.Printf("%T, %v\n", s, s)
+	num, err := strconv.Atoi(s)
+	if err != nil {
+		fmt.Println("some error occurred while conversion")
+	} else {
+		fmt.Println("no error, successfully converted!")
+	}
+	fmt.Printf("%T, %v\n",num, num)
+
+	// int to string conversion, import "strconv" & look that Itoa returns only one value
+	x := 123
+	fmt.Printf("%T, %v\n", x, x)
+	t := strconv.Itoa(x)
+	fmt.Printf("%T, %v\n",t, t)
 }
