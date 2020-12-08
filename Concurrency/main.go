@@ -12,6 +12,20 @@ func f(n int) {
 	}
 }
 
+func pinger(c chan string) {
+	for i := 0; ; i++ {
+		c <- "ping"
+	}
+}
+
+func printer(c chan string) {
+	for {
+		msg := <-c
+		fmt.Println(msg)
+		time.Sleep(time.Second * 1)
+	}
+}
+
 func main() {
 	fmt.Println("Concurrency!")
 	// concurrency != parallelism
@@ -21,7 +35,16 @@ func main() {
 
 	// Goroutines
 	go f(0)
+	//var input string
+	//fmt.Scanln(&input)
+	//fmt.Println("input val: ", input)
+
+	// Channels: Channels provide a way for two goroutines to communicate with one another and synchronize their execution.
+	var c chan string = make(chan string)
+
+	go pinger(c)
+	go printer(c)
+
 	var input string
 	fmt.Scanln(&input)
-	fmt.Println("input val: ", input)
 }
