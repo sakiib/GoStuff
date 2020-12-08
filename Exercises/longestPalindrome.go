@@ -6,7 +6,7 @@ func longestPalindrome(s string) string {
 	substring := ""
 	for i := 0; i < length; i++ {
 		for j := 0; j < length; j++ {
-			dp[i][j] = -1
+			dpp[i][j] = -1
 		}
 	}
 	for i := 0; i < length; i++ {
@@ -22,21 +22,21 @@ func longestPalindrome(s string) string {
 	return substring
 }
 
-var dp[1005][1005] int
+var dpp[1005][1005] int
 
 func palindrome(i int, j int, s string) int {
 	if i >= j {
 		return 1
 	}
 	ret := 0
-	if dp[i][j] != -1 {
-		return dp[i][j]
+	if dpp[i][j] != -1 {
+		return dpp[i][j]
 	}
 	if s[i] == s[j] {
-		ret = (ret | palindrome(i + 1, j - 1, s))
+		ret = ret | palindrome(i + 1, j - 1, s)
 	}
-	dp[i][j] = ret
-	return dp[i][j]
+	dpp[i][j] = ret
+	return dpp[i][j]
 }
 
 // Given a string s, return the longest palindromic substring in s.
