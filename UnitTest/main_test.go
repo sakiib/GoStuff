@@ -11,7 +11,6 @@ func TestTotal(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
 		{
 			name: "first test case Total",
 			args: args{
@@ -46,7 +45,6 @@ func TestMin(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
 		{
 			name: "first test case Min func",
 			args: args{
@@ -83,7 +81,6 @@ func TestMax(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
 		{
 			name: "first test case for max func",
 			args: args{
