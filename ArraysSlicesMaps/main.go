@@ -128,6 +128,11 @@ func main() {
 	testSlice = append(testSlice, addSlice...) // see the three dot's (spread operator/syntax)
 	fmt.Println("updated testSlice", testSlice)
 	fmt.Println("see if the addSlice has changed: ", addSlice) // no, it hasn't
+
+	// declaring slice like this will generate a slice of size 5, initialized with all zeros [0, 0, 0, 0, 0]
+	xSlice := make([]int, 5)
+	fmt.Println(xSlice)
+
 	// declaration of a map [key, value]: [string, int] using the make function
 	mp := make(map[string]int)
 	mp["sakib"] = 1
