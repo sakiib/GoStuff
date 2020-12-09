@@ -42,4 +42,10 @@ func main() {
 			fmt.Println("Odd")
 		}
 	}
+
+	// n Go language, rune literal expressed as one or more characters enclosed in single quotes like ‘g’, ‘\t’, etc.
+	name := "Bangladesh"
+	for index, v := range []rune(name) {
+		fmt.Printf("%v %c %T\n", index, v, v)
+	}
 }
