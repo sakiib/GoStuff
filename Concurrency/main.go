@@ -26,6 +26,19 @@ func printer(c chan string) {
 	}
 }
 
+func numbers() {
+	for i := 1; i <= 5; i++ {
+		time.Sleep(250 * time.Millisecond)
+		fmt.Printf("%d ", i)
+	}
+}
+func alphabets() {
+	for i := 'a'; i <= 'e'; i++ {
+		time.Sleep(400 * time.Millisecond)
+		fmt.Printf("%c ", i)
+	}
+}
+
 func main() {
 	fmt.Println("Concurrency!")
 	// concurrency != parallelism
@@ -47,4 +60,15 @@ func main() {
 
 	var input2 string
 	fmt.Scanln(&input2)
+
+	go numbers()
+	go alphabets()
+	time.Sleep(3000 * time.Millisecond)
+	fmt.Println("main terminated")
+	//Explanation:
+	//numbers goroutine time stamps: 0 250 500 750 1000 1250 (ms)
+	//alphabets goroutine time stams: 0 400 800 1200 1600 2000 (ms)
+	//main goroutine: 3000 ms
+	//overall: 0 250 400 500 750 800 1000 1200 1250 1600 2000 3000 (ms)
+	//output: 1 a 2 3 b 4 c 5 d e main terminated
 }
