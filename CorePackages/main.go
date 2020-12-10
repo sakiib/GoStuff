@@ -32,8 +32,8 @@ func main() {
 	indexTest := "sakibalamin"
 	fmt.Println(strings.Index(indexTest, "x"))
 
-	fmt.Println(strings.Join([]string{"abc","def"}, "xyz")) // output: abcxyzdef
-	fmt.Println(strings.Repeat("sakib", 3)) // repeat this string 3 times sakibsakibsakib
+	fmt.Println(strings.Join([]string{"abc", "def"}, "xyz")) // output: abcxyzdef
+	fmt.Println(strings.Repeat("sakib", 3))                  // repeat this string 3 times sakibsakibsakib
 
 	// output: bbbkkbba, replaces first 5 occurrences of a by b
 	// replaces the substring with the value given, need not to be of same length
@@ -51,9 +51,8 @@ func main() {
 	// converting a string to a slice of binary data, [116 101 115 116] & "test"
 	arr := []byte("test")
 	fmt.Println(arr)
-	str := string([]byte{'t','e','s','t'})
+	str := string([]byte{'t', 'e', 's', 't'})
 	fmt.Println(str)
 	// see the fileIO part for file handling code & frequently used part for sorting array or slices
 
-	
 }

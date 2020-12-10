@@ -1,2 +1,5 @@
 # ignoring .idea/
 .idea/
+
+# test file
+main.go
