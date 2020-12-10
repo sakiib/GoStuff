@@ -39,6 +39,19 @@ func alphabets() {
 	}
 }
 
+func hello(done chan bool) {
+	fmt.Println("Hello world goroutine")
+	done <- true
+}
+
+//modified
+//func hello(done chan bool) {
+//	fmt.Println("hello go routine is going to sleep")
+//	time.Sleep(4 * time.Second)
+//	fmt.Println("hello go routine awake and going to write to done")
+//	done <- true
+//}
+
 func main() {
 	fmt.Println("Concurrency!")
 	// concurrency != parallelism
@@ -71,4 +84,28 @@ func main() {
 	//main goroutine: 3000 ms
 	//overall: 0 250 400 500 750 800 1000 1200 1250 1600 2000 3000 (ms)
 	//output: 1 a 2 3 b 4 c 5 d e main terminated
+
+	// channel declaration:
+	var a chan int
+	if a == nil {
+		fmt.Println("channel a is nil, going to define it")
+		a = make(chan int)
+		fmt.Printf("Type of a is %T", a)
+	}
+	// shorthand declaration
+	//a := make(chan int)
+	//data := <- a // read from channel a
+	//a <- data // write to channel a
+
+	done := make(chan bool)
+	go hello(done)
+	<-done
+	fmt.Println("main function")
+
+	//another one
+	//done := make(chan bool)
+	//fmt.Println("Main going to call hello go goroutine")
+	//go hello(done)
+	//<-done
+	//fmt.Println("Main received data")
 }
