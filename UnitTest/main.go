@@ -30,3 +30,8 @@ func Max(x, y int) int {
 	}
 	return y
 }
+
+// generate
+// test for func or files or packages
+// alt + enter -> fill the args fields carefully
+// go test .
