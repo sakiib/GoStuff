@@ -39,6 +39,9 @@ func main() {
 	// replaces the substring with the value given, need not to be of same length
 	fmt.Println(strings.Replace("aaakkaaa", "a", "b", 5))
 	fmt.Println(strings.Replace("aabaab", "aab", "x", 2))
+	// if n < 0, there is no limit on the number of replacements.
+	info := "sakib.alamin.appscode.dhaka-1230,bangladesh"
+	fmt.Println(strings.Replace(name, ".", "-", -1))
 
 	// split by the second param string: output: xyz, returns a list of string
 	charList := strings.Split("xabyabz", "ab")
