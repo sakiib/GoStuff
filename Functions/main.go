@@ -5,6 +5,14 @@ import (
 	"os"
 )
 
+// function literal: https://programming.guide/go/anonymous-function-literal-lambda-closure.html
+// KeyAlgorithm: func() string {
+// 	if reqSpec.GCP != nil {
+// 		return reqSpec.GCP.KeyAlgorithm
+// 	}
+// 	return ""
+// }(),
+
 // basic struct: func functionName(argument argument type, ) return type {}
 func sumOfTwoNumbers(x, y int) int {
 	return x + y
